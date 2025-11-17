@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="./manifest.webmanifest">
+    <meta name="theme-color" content="#0078d7">
+    <title>Quantenreise – Startseite</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+    <h1>Willkommen zur Quantenreise!</h1>
+</header>
+
+<main>
+    <div class="description">
+        Entdecke die Grundlagen der Quanteninformatik in 4 spannenden Levels.
+    </div>
+
+    <div class="progress">
+        <div>Dein Status: Schulbankdrücker:in</div>
+        <progress id="xp-bar" value="0" max="100"></progress>
+    </div>
+
+    <div class="level-buttons">
+        <a href="./chapters/chapter0.html">Relevanz</a>
+        <a href="./chapters/chapter1.html">Was ist ein Qubit?</a>
+        <a href="chapters/chapter2.html">Quantenschaltkreise</a>
+        <a href="chapters/chapter3.html">Anwendungsbeispiel Quantenschaltkreise</a>
+        <a class="locked" href="#">Level 4</a>
+        <a class="locked" href="#">Level 5</a>
+    </div>
+</main>
+
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./service-worker.js')
+            .then(reg => console.log("SW registriert:", reg.scope))
+            .catch(err => console.error("SW Registrierung fehlgeschlagen:", err));
+    } else {
+        console.log("Service Worker nicht unterstützt");
+    }
+</script>
+
+<script type= "module" src="js/progressStorage.js"></script>
+<script type="module" src="js/overallProgressBar.js"></script>
+
+</body>
+<footer>
+    &copy; 2025 Quantenreise · Erstellt für Bildungszwecke
+</footer>
+</html>

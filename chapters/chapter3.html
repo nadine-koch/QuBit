@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Quantengatter</title>
+    <link rel="stylesheet" href="../styles.css"/>
+</head>
+<body data-key="chapter3"
+      data-questionsnumber="4">
+
+<div class="side-menu" id="sideMenu">
+    <button class="burger">☰</button>
+    <a href="../index.html">🏠 Landing Page</a>
+    <a id="level0" class="unlocked" href="../chapters/chapter0.html">Relevanz</a>
+    <a id="level1" class="unlocked" href="../chapters/chapter1.html">Was ist ein Qubit?</a>
+    <a id="level2" class="unlocked" href="../chapters/chapter2.html">Quantenschaltkreise</a>
+    <a id="level3" class="unlocked" href="#">Anwendungsbeispiel Quantenschaltkreise</a>
+    <a id="level4" class="locked" href="#">Level 4</a>
+    <a id="level5" class="locked" href="#">Level 5</a>
+</div>
+
+<header>
+    <button class="burger">☰</button>
+    <h1>Quantenschaltkreise</h1>
+    <div class="progress-header" id="progressHeader">
+        <progress id="xp-bar" value="0" max="100"></progress>
+        <span id="xp-text">0 / 100 XP</span>
+    </div>
+</header>
+<main>
+    <!-- STORY INTRO -->
+    <section class="story-section">
+        <h2>Mission: Erste Schaltkreise</h2>
+        <div class="npc-container">
+            <img src="../images/NPC.png" alt="NPC Figur">
+            <div class="speech-bubble">
+                <p>
+                    Wir sind da – direkt über Tensora. Unser Problem wartet da unten:
+                    Der <strong>Kontrollkern der Forschungsstation</strong> antwortet nicht stabil. Die klassischen Routinen
+                    laufen heiß. Eine <em>Quanten-Steuerlogik</em> sollte abhilfe leisten.
+                </p>
+            </div>
+        </div>
+
+        <p>
+            Das Raumschiff dockt an.
+            Ihr eilt Richtung Kontrollkern, um die neue Quantenlogik zu implementieren.
+        </p>
+
+    </section>
+
+    <!-- LEARNING CONTENT BEGINS -->
+    <section class="learning-section">
+    <h2>Beispiel: Grover-Algorithmus</h2>
+    <p>
+        Ein Beispiel für Quantenschaltkreise ist der <strong>Grover-Algorithmus</strong>.
+        Er wird verwendet, um ein bestimmtes <strong>Element</strong> in einer <strong>unsortierten Datenbank</strong> zu finden – eine Aufgabe, die
+        klassisch im Durchschnitt <strong><em>O(N)</em></strong> Schritte benötigt.
+        <br>
+        Mithilfe von Quantenvorteilen reduziert sich die benötigte Anzahl der Schritte auf nur etwa
+        <strong><em>O(√N)</em></strong>. Damit ist der Algorithmus <strong>quadratisch schneller</strong> als jedes klassische Verfahren.
+    </p>
+    <h4>Funktionsweise des Groveralgorithmus</h4>
+    <p>
+        Das Grundprinzip des Algorithmus funktioniert wie folgt:<br>
+        Alle möglichen Zustände werden gleichzeitig durch eine Prüfungsroutine geprüft. Diese Routine
+        nennen wir Orakel.<br>
+        Das gesuchte Element wird markiert, alle anderen Elemente bleiben unverändert.
+        <br>
+        Bei Quantenalgorithmen haben wir jedoch das "Problem", dass die Messung auf Wahrscheinlichkeiten basiert.
+        Die falschen Lösungen stören das Ergebnis der Messung.
+        Damit wir am Ende beim Messen nicht von den falschen Zuständen „überstimmt“ werden,
+        sorgt ein Weiterer Schritt im Algorithmus dafür, dass die richtige Lösung viel wahrscheinlicher gemessen wird.
+        Diesen weiteren Schritt nennen wir Diffusion – in diesem Schritt wird der Diffusionsoperator angewendet.
+        Dieser Operator sorgt dafür, dass die Wahrscheinlichkeiten der falschen Lösungen gezielt gemindert werden.
+        Damit erscheint die gesuchte Lösung mit hoher Wahrscheinlichkeit.
+    </p>
+
+    <p>
+        Mit der Superposition kann ein Qubit in den Zuständen |0⟩ und |1⟩ gleichzeitig sein.
+        Diesen Vorteil macht sich der Grover Algorithmus zu nutze.
+        Im Grover Algorithmus werden die Qubits zu Beginn in die Superposition gebracht.
+        Damit repräsentieren die Qubits die gesamte Menge der Elemente die durchsucht werden soll.
+        Jedes Element wird zur gleichen Wahrscheinlichkeit durch die Qubits repräsentiert.
+    </p>
+
+    <div class="info-box">
+        Hat der Grover Algorithmus beispielsweise drei Qubits die alle in der Superposition sind,
+        dann repräsentieren alle drei Qubits jeweils zu 50% |0⟩ und zu 50% |1⟩.<br>
+        Damit ergeben sich die Zustände |000⟩, |001⟩, |010⟩, ... |111⟩,
+        die alle mit gleicher Wahrscheinlichkeit vorkommen.
+        Diese Zustände entsprechen den Einträgen einer Datenbank.
+    </div>
+
+    <p>
+        Um das gesuchte Element aus der Menge der Elemente zu finden, wird das Orakel (also die Prüfungsroutine) angewendet.
+        Dieses Orakel soll eine falsche Lösung (also alle Elemente die nicht gesucht sind) gleich lassen.
+        Wenn der Zustand |000⟩ nicht gesucht ist bedeutet das folgendes: \( Orakel|000⟩ = |000⟩ \)
+        Wenn das Orakel jedoch auf einen gesuchten Zustand angewendet wird, dann soll dieser Zustand markiert werden.
+        Mathematisch ausgedrückt, bedeutet das: \( Orakel|001⟩ = -|001⟩ \)
+        Auf den gesuchten Zustand wurde ein Phasen flip durchgeführt. Der Zustand wurde "markiert".
+    </p>
+
+    <p>
+        Damit diese Markierung beim Messen tatsächlich sichtbar wird, folgt als nächster Schritt der Diffusionsoperator.
+        Er verstärkt die Wahrscheinlichkeit des markierten Zustands und schwächt die Wahrscheinlichkeiten der übrigen Zustände ab.
+        Durch die wiederholte Anwendung von "Orakel + Diffusion" wird der gesuchte Zustand immer wahrscheinlicher.
+        Am Ende genügt eine Messung, um mit hoher Wahrscheinlichkeit den gesuchten Zustand zu erhalten.
+    </p>
+    <div class="npc-container">
+        <img src="../images/NPC.png" alt="Prof. Qubitnik">
+        <div class="speech-bubble">
+             <p>Welches Gatter führt zu einem Phasenflip?</p>
+             <label>
+                <select id="quiz-phase-flip">
+                    <option disabled selected>-- Wähle eine Antwort --</option>
+                    <option>Hadamard-Gatter</option>
+                    <option>Pauli-Z-Gatter</option>
+                    <option>Pauli-X-Gatter</option>
+                    <option>Swap-Gatter</option>
+                </select>
+            </label>
+        </div>
+    </div>
+<p>
+    Der Schaltplan des Grover-Algorithmus besteht im Wesentlichen aus folgenden Schritten:
+</p>
+<ol>
+    <li><strong>Initialisierung:</strong> Alle Qubits starten im Zustand \( |0\rangle \) und werden in die Superposition gebracht. Dadurch werden alle möglichen
+        Zustände des Systems repräsentiert.</li>
+    <li><strong>Orakel (in Abbildung rot umrandet):</strong> Ein spezieller Schaltkreis markiert den gesuchten Zustand, indem er dessen Phase
+        umkehrt. Mathematisch bedeutet das: Der Vektor des gesuchten Zustands erhält ein Minuszeichen, während
+        alle anderen unverändert bleiben.</li>
+    <li><strong>Diffusionsoperator (in Abbildung schwarz umrandet):</strong> Verstärkt die Wahrscheinlichkeit (Amplitude) der markierten Lösung und
+        schwächt die übrigen Zustände ab.</li>
+    <li><strong>Messung:</strong> Nach einigen Wiederholungen von Orakel + Diffusion wird der gesuchte Zustand mit
+        hoher Wahrscheinlichkeit gemessen.</li>
+</ol>
+
+<div style="text-align: center; margin: 20px 0;">
+    <img src="../images/Grover_Algorithmus_Marked.jpg" alt="Schaltplan des Grover-Algorithmus" class="qc-grover-circuit"/>
+    <p>Hinweis: Die im Bild als RX dargestellten Operatoren entsprechen dem Pauli X Gatter.</p>
+</div>
+<div style="border-left: 4px solid #2196F3; background-color: #f1f8ff; padding: 12px; margin: 20px 0;">
+    <p>
+        <strong>Was macht die c4 Leitung?</strong><br>
+        Die unterste Leitung (c4) stellt das klassische Register dar.
+        Sie dient als Messleitung, auf der die Ergebnisse der Quantenmessungen abgelegt werden.
+        Jedes Messergebnis wird dabei als klassisches Bit (0 oder 1) gespeichert.
+    </p>
+</div>
+        <h4>Ancilla Qubit</h4>
+        <p>In Schaltkreisen werden manchmal sogenannte Ancilla Qubits verwendet. Diese Qubits sind sogenannte Hilfsqubits.
+            In unserer obigen Schaltung ist das vierte Qubit von oben (mit der Bezeichnung <em>q[3]</em>) ein Ancilla Qubit. Es hilft uns für eine kurze Zeit aus, wird allerdings
+            nicht gemessen. Es enthält keine relevanten Daten die gemessen werden müssen.
+            Ancilla Qubits helfen temporär, um bestimmte Rechnungen oder Kontrollaufgaben zu übernehmen.
+            Im Schaltkreis werden sie wie ein "normales" Qubit dargestellt und verwendet.
+            Der einzige Unterschied zu "normalen" Qubits liegt darin, dass sie nicht die eigentlichen Informationen des Algorithmus speichern, sondern nur temporär helfen.</p>
+        <p>Das mehrfach kontrollierte Z kann beispielsweise mit einem Ancilla Qubit ausgeführt werden. Das Hilfsqubit flippt die Phase (Pauli Z Operation), wenn die
+            controll-Qubits 1 sind. Das Ancilla Qubit speichert damit das Ergebnis dieser Operation ab.</p>
+
+        <p><strong>Wie funktioniert das Orakel?</strong></p>
+        <p>
+            Angenommen, das gesuchte Element ist 010.
+            Das Herzstück des Orakels ist ein <em>mehrfach kontrolliertes Z-Gatter</em>. Dieses Gatter fügt eine
+            Phasenänderung (ein Minuszeichen) genau dann hinzu, wenn die Steuerqubits in einem bestimmten Zustand
+            sind. Das Problem: Es „schaltet“ eigentlich nur, wenn die Steuerqubits alle 1 sind
+            (also beim Zustand 111).
+        </p>
+        <p>
+            Um trotzdem andere Muster wie 010 markieren zu können, trickst man:
+            Mit <strong>Pauli-X-Gattern</strong> werden vorher einzelne Bits invertiert, sodass aus
+            010 für einen Moment 111 wird.
+            Dann reagiert das kontrollierte Z wie gewünscht und markiert diesen Zustand.
+            Danach setzt man mit denselben Pauli-X-Gattern alles wieder zurück, sodass die ursprünglichen Qubits
+            unverändert weiterlaufen.
+        </p>
+        <p>
+            Wichtig ist: Das Orakel misst nichts!
+            Stattdessen wird die Phase des gesuchten Zustands verändert. Dadurch unterscheidet sich dieser Zustand
+            zwar nicht in seiner Wahrscheinlichkeit, aber er „steht nun anders im Raum“ und kann im nächsten Schritt
+            (Diffusion) gezielt verstärkt werden.
+        </p>
+
+        <p>
+            Vielleicht fragst du dich jetzt: „Aber wie <em>suche</em> ich denn eigentlich? Ich muss doch jeden Zustand
+            mit der gesuchten Lösung vergleichen?“ – Genau das übernimmt das Orakel für uns.
+            Der Trick liegt darin, dass alle möglichen Zustände des Systems gleichzeitig in der Superposition vorhanden sind.
+            Das Orakel prüft also nicht <em>einen Zustand nach dem anderen</em> (wie ein klassischer Computer),
+            sondern es wendet die Markierungsregel <strong>parallel auf alle Zustände gleichzeitig</strong> an.
+            Dadurch „weiß“ das System nach dem Orakel-Schritt, welcher Zustand besonders behandelt wird
+            – ohne dass jeder Vergleich einzeln durchgeführt werden muss.
+        </p>
+
+
+        <div style="border-left: 4px solid #2196F3; background-color: #f1f8ff; padding: 12px; margin: 20px 0;">
+            <p><strong>Warum braucht man den Diffusionsoperator?</strong></p>
+            <p>
+                Nach dem Orakel ist das gesuchte Element markiert, aber seine Wahrscheinlichkeit ist noch genauso klein
+                wie die aller anderen Zustände. Der Diffusionsoperator sorgt dafür, dass die Amplitude (also die
+                Wahrscheinlichkeit beim Messen) des markierten Zustands schrittweise <strong>verstärkt</strong> wird,
+                während die der anderen Zustände verringert wird.
+            </p>
+            <p>
+                Man kann sich das so vorstellen: Der Gesamtzustand aller Qubits ist wie eine Welle. Durch das Orakel wird
+                die Phase des gesuchten Zustands umgedreht, und durch den Diffusionsoperator „kippt“ die Welle so, dass
+                die Amplitude genau dieses Zustands wächst. Nach einigen Wiederholungen sticht die gesuchte Lösung
+                deutlich hervor.
+            </p>
+            <p>
+                Optimalerweise wird der Algorithmus genau
+                \( \frac{\pi}{4} \sqrt{\frac{N}{M}} \) mal iteriert. N ist die Anzahl der möglichen Zustände (z. B. bei
+                3 Qubits also \( N = 2^3 = 8 \)), M ist die Anzahl der gesuchten Zustände (z. B. 1).
+                Führt man mehr Iterationen durch, tritt der sogenannte <em>Soufflé-Effekt</em> auf: Die Wahrscheinlichkeit
+                für die gesuchten Zustände steigt zunächst an, fällt danach aber wieder ab – die Lösung wird wieder
+                „verwischt“.
+            </p>
+            </div>
+        </section>
+
+    <section class="learning-section" id="final-quiz">
+        <h3>Kontrollkern-Stabilisation</h3>
+
+        <div class="npc-container">
+            <img src="../images/NPC.png" alt="Prof. Qubitnik">
+            <div class="speech-bubble">
+                <p>Du willst den Zustand <code>001</code> mit einem mehrfach kontrollierten Z markieren.
+                    Welche Vor-/Nachbereitung ist korrekt?
+                    <br>
+                    Hinweis: X steht für Pauli X. CCZ steht für controlled (erstes Qubit) controlled (zweites Qubit) Z (drittes Qubit).
+                </p>
+                <label>
+                    <select id="quiz-mark-001">
+                        <option disabled selected>-- Wähle eine Antwort --</option>
+                        <option>X auf q2 und q1 → CCZ → X auf q2 und q1</option>
+                        <option>X auf q0 → CCZ → X auf q0</option>
+                        <option>CCZ ohne Vor- und Nachbereitung</option>
+                        <option>H auf allen → CCZ → H auf allen</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <div class="npc-container">
+            <img src="../images/NPC.png" alt="Prof. Qubitnik denkt nach">
+            <div class="speech-bubble">
+                <p>Für eine Suche über <code>N=8</code> Zustände mit genau <code>M=1</code> Treffer –
+                    wie viele Grover-Iterationen sind optimal (gerundet)?</p>
+                <label>
+                    <select id="quiz-iterations">
+                        <option disabled selected>-- Wähle eine Antwort --</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <div class="npc-container">
+            <img src="../images/NPC.png" alt="Prof. Qubitnik erklärt das Orakel">
+            <div class="speech-bubble">
+                <p><strong>Frage 3:</strong> Im Grover-Orakel sollen <em>zwei</em> Zielzustände markiert werden, z. B. <code>|010⟩</code> und <code>|101⟩</code>.
+                    Wie baust du den Orakel-Teil im Schaltkreis korrekt auf?</p>
+                <label>
+                    <select id="quiz-oracle-multi-target">
+                        <option disabled selected>-- Wähle eine Antwort --</option>
+                        <option>Nur den Diffusionsoperator zweimal anwenden – der markiert automatisch mehrere Zustände.</option>
+                        <option>Ein einziges mehrfach-kontrolliertes Z verwenden und hoffen, dass beide Muster getroffen werden.</option>
+                        <option>Zwei Orakel-Blöcke nacheinander: Für jeden Zielzustand passende X-Vor-/Nachschaltungen, dann ein mehrfach-kontrolliertes Z, danach die Xs wieder rückgängig machen.</option>
+                        <option>Zwischen den beiden Markierungen messen, damit der erste Treffer „fixiert“ wird.</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <p id="final-prompt" style="margin-top:.6rem;color:#b00020;">
+            In einem Terminal wird <em>Time is ticking ...</em> angezeigt.
+        </p>
+
+        <div id="final-scene" style="display:none; margin-top:1rem;">
+            <div class="npc-container">
+                <img src="../images/NPC.png" alt="Prof. Qubitnik erleichtert">
+                <div class="speech-bubble">
+                    <p><strong>Stabilisierung erfolgreich!</strong> Die Warnlichter erlöschen, der Kontrollkern synchronisiert sich.
+                        Die Verarbeitung der Daten funktioniert wieder erfolgreich. Großartige Arbeit!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- show final act when hitting 100 XP -->
+    <script type="module">
+        import { getXP } from "../js/progressStorage.js";
+        function maybeRevealEnding() {
+            const key = document.body.dataset.key;
+            const scene = document.getElementById("final-scene");
+            const prompt = document.getElementById("final-prompt");
+            const done = getXP(key) >= 100;
+            scene.style.display = done ? "block" : "none";
+            if (prompt) prompt.style.display = done ? "none" : "block";
+        }
+        document.addEventListener("DOMContentLoaded", maybeRevealEnding);
+        document.addEventListener("xpChanged", (e) => {
+            if (e.detail?.key === document.body.dataset.key) maybeRevealEnding();
+        });
+    </script>
+
+</main>
+<footer>
+    &copy; 2025 Quantenreise · Gemeinsam Quanten entdecken!
+</footer>
+
+<script type="module">
+    import { setupBurgerMenu } from "../js/burgerMenu.js";
+    setupBurgerMenu();
+</script>
+
+<script type="module" src="../js/quizQuestions.js"></script>
+<script type="module" src="../js/progressStorage.js"></script>
+<script type="module">
+    import { guardAccess } from "../js/levelLock.js";
+
+    guardAccess("chapter2", "chapter3", 100);
+</script>
+<script type="module" src="../js/stickyHeaderProgressBar.js"></script>
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</body>
+</html>

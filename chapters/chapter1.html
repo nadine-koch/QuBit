@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Was ist ein Qubit?</title>
+    <link rel="stylesheet" href="../styles.css"/>
+</head>
+<body data-key="chapter1"
+      data-questionsnumber="5">
+
+<div class="side-menu" id="sideMenu">
+    <button class="burger">☰</button>
+    <a href="../index.html">🏠 Landing Page</a>
+    <a id="level0" class="unlocked" href="../chapters/chapter0.html">Relevanz</a>
+    <a id="level1" class="unlocked" href="../chapters/chapter1.html">Was ist ein Qubit?</a>
+    <a id="level2" class="locked" href="#">Quantenschaltkreise</a>
+    <a id="level3" class="locked" href="#">Anwendungsbeispiel Quantenschaltkreise</a>
+    <a id="level4" class="locked" href="#">Level 4</a>
+    <a id="level5" class="locked" href="#">Level 5</a>
+</div>
+
+<header>
+    <button class="burger">☰</button>
+    <h1>Was ist ein Qubit?</h1>
+    <div class="progress-header" id="progressHeader">
+        <progress id="xp-bar" value="0" max="100"></progress>
+        <span id="xp-text">0 / 100 XP</span>
+    </div>
+</header>
+
+<main>
+    <!-- STORY INTRO -->
+    <section class="story-section">
+        <h2>Mission: Willkommen im Team</h2>
+
+        <div class="npc-container">
+            <img src="../images/NPC.png" alt="NPC Figur">
+            <div class="speech-bubble">
+                <p>
+                    Willkommen zurück – großartig, dass du wieder dabei bist!
+                    Ab jetzt bist du offiziell Teil der Rettungsmission meiner Forschungsstation.
+                    Bevor wir jedoch starten, solltest du die Grundlagen verstehen, mit denen wir arbeiten.
+                    Ohne dieses Wissen könnten wir die Systeme des Schiffs – und schon gar nicht den Quantenantrieb – kontrollieren.
+                    <br><br>
+                    Das Institut hat uns ein digitales Missionshandbuch geschickt.
+                    Lies es aufmerksam durch – die Zukunft unserer Mission hängt buchstäblich davon ab!
+                </p>
+            </div>
+        </div>
+        <p>
+            Prof. Qubitnik sendet dir das digitale Missionshandbuch.
+            Der Bildschirm flackert kurz auf, bevor sich Zeilen mit mysteriösen Symbolen, Gleichungen und Kugeldiagrammen füllen.
+            Du atmest tief durch und öffnest die erste Seite:
+            <br><br>
+            <strong>„Was ist ein Qubit?“</strong>
+        </p>
+    </section>
+
+    <!-- LEARNING CONTENT BEGINS -->
+    <section class="learning-section">
+        <h2>Bit vs. Qubit</h2>
+        <p>Ein klassischer Computer speichert Informationen als Bits: Diese können entweder den Wert <strong>0</strong> oder <strong>1</strong> haben.
+            Diese Zustände entsprechen zum Beispiel einem elektrischen Zustand, bei dem <strong>„Strom fließt“</strong> oder <strong>„kein Strom fließt“</strong>.
+            Man kann sich das auch wie einen Lichtschalter vorstellen – er ist entweder <em>an</em> oder <em>aus</em>.
+            Mittels Bitfolgen können Informationen wie beispielsweise Text dargestellt werden. In der erweiterten
+            ASCII-Code-Tabelle entspricht die Bitfolge '01000001'
+            beispielsweise dem Buchstaben 'A'.</p>
+        <p>
+            <strong>Was sind jetzt Qubits?</strong>
+            Ein Qubit ist das kleinste Informationselement in der Quanteninformatik.
+            Es kann ebenfalls zwei Zustände annehmen.
+            Zusätzlich kann es sich in einer <em>Superposition</em> dieser Zustände befinden.
+            Das bedeutet, es befindet sich gleichzeitig in einer Kombination aus <strong>|0⟩</strong> und <strong>|1⟩</strong>.
+
+            Wenn wir das Qubit schließlich <strong>messen</strong>, „entscheidet“ es sich für einen der beiden Zustände.
+            Die Messung zerstört die Superposition – das Qubit kollabiert also in einen eindeutigen Wert, <strong>0 oder 1</strong>.
+            Welche dieser beiden Möglichkeiten tatsächlich eintritt, hängt von den <strong>Wahrscheinlichkeiten</strong> ab, die durch die sogenannten <em>Amplituden</em> beschrieben werden
+            (darauf kommen wir später noch zurück).
+        </p>
+        <h3>Bloch Kugel</h3>
+          <p>Die möglichen Zustände eines Qubits können mit der <strong>Bloch-Kugel</strong> veranschaulicht werden.
+            Jeder Punkt auf der Oberfläche dieser Kugel beschreibt einen möglichen Zustand eines Qubits.
+            Durch diese Darstellung wird deutlich, dass ein Qubit viel mehr sein kann als nur 0 oder 1 – es kann jeden beliebigen Zustand auf der Oberfläche dieser Kugel annehmen.
+
+            Diese Darstellung zeigt auch, dass die Zustände eines Qubits nicht nur durch reelle Zahlen beschrieben werden.
+            Ein entscheidender Bestandteil ist der <strong>imaginäre Anteil</strong>, der die sogenannte <strong>Phase</strong> des Qubits bestimmt.
+            Dadurch können unendlich viele Zwischenzustände entstehen – also nicht nur 0 oder 1,
+            sondern jeder beliebige Punkt auf der Kugeloberfläche, der sich durch unterschiedliche Phasen und Amplituden ergibt.
+          </p>
+
+        <p>Die Nord- und Südpol-Positionen auf der Kugel entsprechen den Basiszuständen <strong>|0⟩</strong> und <strong>|1⟩</strong>.
+            Andere Punkte - die zwischen dem Nord- und Südpol liegen - stellen Superpositionen dieser Zustände dar.
+            Die Positionen die auf der x-Achse des Äquators liegen können zum Beispiel mittels <strong>(|0⟩ + |1⟩)/√2</strong> beschrieben werden.
+            Das Messen eines Qubits erfolgt typischerweise in der sogenannten <strong>Z-Basis</strong>,
+            also entlang der Achse zwischen |0⟩ und |1⟩.</p>
+
+        <div class="npc-container">
+            <img src="../images/NPC.png" alt="Prof. Qubitnik">
+            <div class="speech-bubble">
+                <p>
+                    Wenn das Qubit auf der Bloch-Kugel genau zwischen Nord- und Südpol liegt,
+                    also eine gleichmäßige Superposition aus |0⟩ und |1⟩ ist –
+                    was bedeutet das für die Messwahrscheinlichkeit?
+                </p>
+                <label>
+                    <select id="bloch-mid-equator">
+                        <option disabled selected>-- Wähle eine Antwort --</option>
+                        <option>Das Qubit wird immer als |0⟩ gemessen.</option>
+                        <option>Das Qubit wird immer als |1⟩ gemessen.</option>
+                        <option>Das Qubit wird zu 50 % als |0⟩ und zu 50 % als |1⟩ gemessen.</option>
+                        <option>Das Qubit kann nicht gemessen werden.</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <p>Die Superposition eines Qubits wird durch die Gleichung \( |ψ⟩ = a|0⟩ + b|1⟩ \) beschrieben.</p>
+        <p><strong>\( |ψ⟩ \)</strong> stellt den Zustand des Qubits dar.
+            Die beiden hinteren Teile <strong>|0⟩</strong> und <strong>|1⟩</strong> sind die Zustände, die das Qubit bei der Messung der Z-Basis potenziell annehmen kann.
+        </p>
+        <p>Die Zustände eines Qubits werden in der sogenannten <strong>Bra-Ket-Notation</strong> (auch Dirac-Notation genannt) beschrieben.
+            In dieser Notation werden Spalten-Vektoren als <strong>Ket</strong> geschrieben, zum Beispiel <strong>\( |ψ⟩ \)</strong>.
+            Der zugehörige transponierte und komplex konjugierte Zeilen-Vektor heißt <strong>Bra</strong> und wird als <strong>\( ⟨ψ| \)</strong> geschrieben.</p>
+        <div class="bloch-row">
+            <div style="flex: 1 1 280px; display: flex; justify-content: center;">
+                <figure>
+                    <img src="../images/Bloch_sphere.png" alt="Bloch Sphere" width="300" height="300" style="border-radius: 8px;"/>
+                    <figcaption>
+                        <em>Bloch-Kugel — Grafik von <a href="https://commons.wikimedia.org/wiki/User:Smite-Meister">Smite-Meister</a>,
+                        lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</em>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="info-box">
+                <strong>|0⟩ und |1⟩ in Vektor und Dirac-Notation:</strong>
+                <p>
+                    Die beiden Basiszustände \( |0\rangle \) und \( |1\rangle \) lassen sich als Spaltenvektoren darstellen:<br>
+                    \( |0\rangle = \begin{pmatrix}1 \\ 0\end{pmatrix}, \quad |1\rangle = \begin{pmatrix}0 \\ 1\end{pmatrix} \)
+                </p>
+                <p>
+                    Der zugehörige Bra-Vektor ergibt sich durch Transposition und komplexe Konjugation:<br>
+                    \( \langle 0| = \begin{pmatrix}1 & 0\end{pmatrix}, \quad \langle 1| = \begin{pmatrix}0 & 1\end{pmatrix} \)
+                </p>
+                <p>
+                    Die Bra-Ket-Darstellung ist also nur eine andere Schreibweise für die Vektoren, die wir bereits kennen.
+                    Sie ist jedoch kompakter und besonders hilfreich bei der Arbeit mit Operatoren. Mehr dazu in Kapitel 2 – Quantenschaltkreise.
+                </p>
+            </div>
+        </div>
+
+        <p>Warum ist die Bloch-Kugel dreidimensional? Dies liegt daran, dass der Zustand eines Qubits neben dem Verhältnis zwischen |0⟩ und |1⟩ auch
+            eine <strong>Phase</strong> haben kann. Diese Phase ist eine komplexe Zahl und beschreibt, wie die Wellenanteile der Superposition zueinander verschoben sind.
+            Die Phase eines Zustands kann man sich als einen Winkel auf der Bloch-Kugel vorstellen,
+            der angibt, wie weit sich der Zustand im Vergleich zu einem Referenzzustand gedreht hat.
+            Eine <strong>globale Phase</strong> (also dieselbe Phase für beide Komponenten) ist physikalisch nicht relevant, kann also ignoriert werden.
+            Eine <strong>lokale Phase</strong> hingegen – also ein Unterschied zwischen den Phasen von |0⟩ und |1⟩ – beeinflusst das Messergebnis und ist somit wichtig.</p>
+
+        <div style="border-left: 4px solid #2196F3; background-color: #f1f8ff; padding: 12px; margin: 20px 0;">
+            <em>Beispiel für eine relative Phase:</em> Die Zustände
+            \( \frac{1}{\sqrt{2}}|0\rangle + \frac{1}{\sqrt{2}}|1\rangle \) und
+            \( \frac{1}{\sqrt{2}}|0\rangle + \frac{1}{\sqrt{2}}e^{i\varphi}|1\rangle \)
+            haben dasselbe Verhältnis zwischen den Basiszuständen, aber durch die <strong>Phase \( \varphi \)</strong> ein unterschiedlichen Zustand auf der Bloch Sphäre.
+            <br><br>
+            <em>Beispiel für eine globale Phase:</em><br>
+            Die Zustände
+            \( \frac{1}{\sqrt{2}}|0\rangle + \frac{1}{\sqrt{2}}|1\rangle \) und
+            \( e^{i\delta} \left( \frac{1}{\sqrt{2}}|0\rangle + \frac{1}{\sqrt{2}}|1\rangle \right) \)
+            sehen auf den ersten Blick unterschiedlich aus – aber beide bilden den selben Zustand auf der Block Sphäre ab.
+
+            <br>
+            Die globale Phase \( e^{i\delta} \) wirkt auf den gesamten Zustand gleichmäßig und hat keinen Einfluss auf das Messergebnis.
+            Deshalb kann man globale Phasen in vielen Rechnungen weglassen.
+        </div>
+
+        <div class="npc-container">
+            <img src="../images/NPC.png" alt="Prof. Qubitnik denkt nach">
+            <div class="speech-bubble">
+                <p>
+                    Stell dir vor, du hast zwei Qubits, die beide gleich aussehen –
+                    aber eines hat zusätzlich eine relative Phase von \( e^{i\pi} \) beim |1⟩-Anteil.
+                    Wie unterscheidet sich das Messergebnis der beiden Qubits in der Z-Basis?
+                </p>
+                <label>
+                    <select id="phase-difference">
+                        <option disabled selected>-- Wähle eine Antwort --</option>
+                        <option>Das Messergebnis ist unterschiedlich, da die Phase den gemessenen Zustand verändert.</option>
+                        <option>Das Messergebnis ist gleich, da die relative Phase keinen Einfluss auf Messung in der Z-Basis hat.</option>
+                        <option>Die globale Phase sorgt für einen anderen Messwinkel.</option>
+                        <option>Beide Zustände können nicht gemessen werden.</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <h3>Mathematische Beschreibung eines Qubits</h3>
+        <div style="border-left: 4px solid #2196F3; background-color: #f1f8ff; padding: 12px; margin: 20px 0;">
+            <div class="image-container">
+                <figure style="text-align: left;">
+                    <img src="../images/Complex_conjugate_ab.png" alt="Komplex konjugiert" width="150" height="150"/>
+                    <figcaption>
+                        <em>Komplexe Zahl und komplex konjugierte Zahl - von
+                            <a href="https://commons.wikimedia.org/wiki/User:Oleg_Alexandrov">Oleg Alexandrov</a>,
+                            lizenziert unter
+                            <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</em>
+                    </figcaption>
+                    <figcaption style="color: #333; margin-top: 6px;">
+                        Die komplexe Ebene zeigt, wie sich eine Amplitude (z = a + ib) zusammensetzt.
+                        Auf der Bloch-Sphäre entspricht die reelle Achse der x-Achse und die imaginäre Achse der y-Achse.
+                        Der Winkel \( \varphi \) beschreibt somit die Phase des Zustands um die z-Achse der Bloch-Kugel.
+                    </figcaption>
+                </figure>
+                <p class="caption">Hinweis: Beim <strong>Transponieren</strong> wird der Vektor von Spalten- zu Zeilenform gespiegelt.
+                    Die <strong>komplexe Konjugation</strong> kehrt zusätzlich das Vorzeichen des Imaginärteils um. Sie wird exemplarisch im obigen Bild visualisiert.</p>
+            </div>
+        </div>
+
+        <p>Die Superposition eines Qubits wird durch die Gleichung \( |ψ⟩ = a|0⟩ + b|1⟩ \) beschrieben.</p>
+
+        <p><strong>\( |ψ⟩ \)</strong> stellt den Zustand des Qubits dar.
+            Die beiden hinteren Teile <strong>|0⟩</strong> und <strong>|1⟩</strong> kennen wir bereits von der Bloch Sphäre.
+            Das sind die Zustände, die das Qubit bei der Messung der Z-Basis potenziell annehmen kann.
+            <br><br>
+            Aber welcher der beiden Zustände wird bei der Messung angenommen - |0⟩ oder |1⟩?
+            <br>
+            Für diese Frage kommen die Vorfaktoren a und b ins Spiel.
+            Quadriert man die Länge der beiden Vorfaktoren <strong>a</strong> und <strong>b</strong>, dann geben diese jeweils die Wahrscheinlichkeit an, dass das
+            Qubit in den entsprechenden Zustand kollabiert.
+            Die Gesamtwahrscheinlichkeit in einem System muss dabei immer 1 ergeben. Es muss also gelten: |a|² + |b|² = 1
+        </p>
+        <p>
+            Ein Beispiel für die Berechnung der Wahrscheinlichkeit ist folgende Darstellung:
+            \( |ψ\rangle = \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle) \)<br>
+            Wenn wir diese Gleichung umschreiben und die Klammer auflösen erhalten wir: \( |ψ\rangle = \frac{1}{\sqrt{2}}|0\rangle + \frac{1}{\sqrt{2}}|1\rangle \)<br>
+            Somit lässt sich eine Wahrscheinlichkeit für den Zustand |0⟩ und auch |1⟩ berechnen: \( \left| \frac{1}{\sqrt{2}} \right|^2 = \frac{1}{2} \)<br>
+            Wir bekommen also bei dem oben dargestellten Qubit System zu 50% den Zustand |0⟩ und zu 50% den Zustand |1⟩.
+        </p>
+        <div class="npc-container">
+            <img src="../images/NPC.png" alt="Prof. Qubitnik">
+            <div class="speech-bubble">
+                <p>
+                    Wie würde der Vektorpfeil auf der Bloch Sphäre für das Qubit aussehen? \( |ψ\rangle = \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle) \)
+                </p>
+                <label>
+                    <select id="bloch-sphere">
+                        <option disabled selected>-- Wähle eine Antwort --</option>
+                        <option>Der Vektorpfeil zeigt auf den Zustand \( |0\rangle \).</option>
+                        <option>Der Vektorpfeil zeigt auf den Zustand \( |1\rangle \).</option>
+                        <option>Der Vektorpfeil kann nicht abgebildet werden.</option>
+                        <option>Der Vektorpfeil zeigt auf einen Punkt auf dem Äquator.</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <p>Für unseres Beispiel erhalten wir: |a|² + |b|² = 1 </p>
+        <p>Diese Gleichung ist eine Regel die für alle Qubit-Gleichungen gelten muss.
+            Diese Regel wird auch Born’schen Wahrscheinlichkeitsregel genannt und ist ein grundlegendes Prinzip der Quantenphysik.</p>
+        <div style="border-left: 4px solid #2196F3; background-color: #f1f8ff; padding: 12px; margin: 20px 0;">
+            <strong>Bornsche Wahrscheinlichkeitsregel:</strong>
+            <p>
+                Beim Messen eines Qubits in einem Basiszustand
+                \( |ψ\rangle = a|0\rangle + b|1\rangle \)
+                erhält man den Zustand \(|0\rangle\) mit Wahrscheinlichkeit \( |a|^2 \)
+                und \(|1\rangle\) mit Wahrscheinlichkeit \( |b|^2 \).
+                Die Summe aller Messwahrscheinlichkeiten muss immer 1 ergeben, weil wir bei der Messung auf jeden Fall in einen Zustand (hier 0 oder 1) gehen.
+            </p>
+        </div>
+
+        <div class="npc-container">
+            <img src="../images/NPC.png" alt="Prof. Qubitnik">
+            <div class="speech-bubble">
+                <p>
+                    Was muss für die Summe der Wahrscheinlichkeiten in einem Qubit gelten?
+                </p>
+                <label>
+                    <select id="max-born-rule">
+                        <option disabled selected>-- Wähle eine Antwort --</option>
+                        <option>Die Summe der Wahrscheinlichkeiten in einem System müssen zwischen 0 und 1 liegen. </option>
+                        <option>Die Summe der Wahrscheinlichkeiten in einem System muss 1 sein.</option>
+                        <option>Die Summe der Wahrscheinlichkeiten in einem System kann beliebige Werte annehmen.</option>
+                        <option>Die Summe der Wahrscheinlichkeiten in einem System muss  0,5 sein.</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <br>
+        <p>
+            Während die Bloch Sphäre die Zustände eines einzelnen Qubits veranschaulicht, wird es besonders spannend, wenn zwei oder mehr Qubits durch das
+            Bilden eines Tensorprodukts zu einem Quantenregister zusammengefasst werden.
+        </p>
+
+        <p>
+            In solchen Mehr-Qubit-Systemen kann ein bemerkenswertes Phänomen auftreten: die sogenannte <strong>Verschränkung</strong>.
+        </p>
+
+        <p>
+            Dabei entstehen Quantenverbindungen zwischen Qubits die dazu führen, dass der Zustand des einen unmittelbar mit dem des anderen zusammenhängt –
+            selbst wenn sie weit voneinander entfernt sind.
+        </p>
+
+        <p>
+            Wird eines der verschränkten Qubits gemessen, steht dadurch auch der Zustand des anderen sofort fest.
+
+            Verschränkte Qubits müssen dabei nicht in den gleichen Zustand haben.
+            Es gibt auch Zustände wie \( \frac{1}{\sqrt{2}}(|01⟩ + |10⟩) \),
+            bei denen das Messen des ersten Qubits auf |0⟩ sofort bedeutet, dass das zweite Qubit |1⟩ ist – und umgekehrt.
+            Wichtig ist, dass die Zustände der beiden Qubits miteinander korreliert sind, nicht unbedingt identisch.
+        </p>
+        <div class="npc-container">
+            <img src="../images/NPC.png" alt="Prof. Qubitnik mit verschränkten Qubits">
+            <div class="speech-bubble">
+                <p>
+                    Zwei Qubits befinden sich im verschränkten Zustand \( \frac{1}{\sqrt{2}}(|00⟩ + |11⟩) \) .<br>
+                    Wenn du das erste Qubit misst und es ergibt |0⟩ – was kannst du dann über das zweite Qubit sagen?
+                </p>
+                <label>
+                    <select id="entanglement-correlation">
+                        <option disabled selected>-- Wähle eine Antwort --</option>
+                        <option>Es wird zufällig |0⟩ oder |1⟩ sein.</option>
+                        <option>Es wird ebenfalls |0⟩ sein.</option>
+                        <option>Es wird sicher |1⟩ sein.</option>
+                        <option>Sein Zustand ist unabhängig vom ersten Qubit.</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+
+<footer>
+    &copy; 2025 Quantenreise · Erstellt für Bildungszwecke
+</footer>
+
+<script type="module">
+    import { setupBurgerMenu } from "../js/burgerMenu.js";
+    setupBurgerMenu();
+</script>
+
+<script type="module" src="../js/quizQuestions.js"></script>
+<script type="module" src="../js/progressStorage.js"></script>
+<script type="module">
+    import { guardAccess } from "../js/levelLock.js";
+
+    guardAccess("chapter0", "chapter1", 100);
+</script>
+<script type="module" src="../js/stickyHeaderProgressBar.js"></script>
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+</body>
+</html>

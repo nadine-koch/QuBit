@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wie alles begann</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body data-key="chapter0"
+        data-questionsnumber="2">
+
+<div class="side-menu" id="sideMenu">
+  <button class="burger">☰</button>
+  <a href="../index.html">🏠 Landing Page</a>
+    <a id="level0" class="unlocked" href="../chapters/chapter0.html">Relevanz</a>
+    <a id="level1" class="locked" href="#">Was ist ein Qubit?</a>
+    <a id="level2" class="locked" href="#">Quantenschaltkreise</a>
+    <a id="level3" class="locked" href="#">Anwendungsbeispiel Quantenschaltkreise</a>
+    <a id="level4" class="locked" href="#">Level 4</a>
+    <a id="level5" class="locked" href="#">Level 5</a>
+</div>
+
+<header>
+  <button class="burger">☰</button>
+  <h1>Relevanz</h1>
+    <div class="progress-header" id="progressHeader">
+        <progress id="xp-bar" value="0" max="100"></progress>
+        <span id="xp-text">0 / 100 XP</span>
+    </div>
+</header>
+
+<main>
+  <!-- STORY INTRO -->
+  <section class="story-section">
+    <h2>Mission: Wie alles begann</h2>
+
+    <p>
+      Prof. Qubitniks Forschungsstation auf dem Planeten Tensora steht kurz vor dem Zusammenbruch.
+      Die klassischen Rechnersysteme stoßen an ihre Grenzen. Datenmengen explodieren, und die künstlichen Intelligenzen scheitern an physikalischen Limits.
+      Leider kennt er sich nur mit klassischer Informatik aus. Deshalb braucht er <strong>dich</strong>!
+      Hilf ihm das Problem mittels Quanteninformatik zu lösen.
+    </p>
+    <div class="npc-container">
+      <img src="../images/NPC.png" alt="NPC Figur">
+      <div class="speech-bubble">
+        <p>
+          Meine Forschungsstation auf Tensora steht kurz vor dem Kollaps!
+          Ich ähm ... äh brauche deine Hilfe!<br>
+          Ich habe Informationen zum Thema Quanteninformatik angefordert. Kannst du dir das Wissen aneignen und mich auf der Mission unterstützen? ... bitte?
+          Alleine komme ich nicht mehr hinterher – aber zusammen haben wir noch eine Chance, es rechtzeitig zu schaffen.
+        </p>
+      </div>
+    </div>
+
+    <p>
+      Prof. Qubitnik schaut dich wartend an. Nach kurzem zögern nickst du leicht.<br>
+      Mit einem hauch von Erleichterung im Gesicht, hält dir Prof. Qubitnik ein paar Blätter hin.
+      Auf dem obersten Blatt steht in dicker Schrift geschrieben: <strong>Quanteninformatik: Relevanz des Themas</strong>
+      Du nimmst sie ...
+    </p>
+  </section>
+
+  <!-- LEARNING CONTENT BEGINS -->
+  <section class="learning-section">
+    <h2>Quantencomputer</h2>
+    <p>
+      Im Gegensatz zu klassischen Computern, die mit Bits arbeiten (0 oder 1), nutzen Quantencomputer
+      <strong>Qubits</strong>, die durch Überlagerung (Superposition) und Verschränkung deutlich mehr Zustände
+      gleichzeitig darstellen können.
+      Dadurch lassen sich bestimmte Probleme – z. B. in der Kryptografie oder bei der Suche in großen Datenmengen
+      –
+      <strong>exponentiell schneller</strong> lösen als mit herkömmlichen Computern.
+    </p>
+    <div class="npc-container">
+      <img src="../images/NPC.png" alt="Prof. Qubitnik">
+      <div class="speech-bubble">
+        <p>Warum können Quantencomputer bei bestimmten Problemen schneller sein als klassische Computer?</p>
+        <label>
+          <select id="quiz-quantum-advantage">
+            <option disabled selected>-- Wähle eine Antwort --</option>
+              <option>Weil sie mehrere klassische Prozessoren gleichzeitig nutzen</option>
+              <option>Weil sie Zustände deterministisch statt probabilistisch berechnen</option>
+              <option>Weil sie durch Superposition und Verschränkung viele mögliche Zustände gleichzeitig verarbeiten können</option>
+              <option>Weil sie Quantenfehler durch Energiezufuhr automatisch korrigieren</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <h2>Quanteninformatik als interdisziplinäres Feld</h2>
+    <p>
+      Die Quanteninformatik ist ein interdisziplinäres Forschungsfeld, in dem Fachpersonen aus verschiedenen
+      Bereichen eng zusammenarbeiten.
+      <strong>Physiker:innen</strong> entwickeln die physikalischen Grundlagen und bauen die Hardware, mit der
+      Qubits stabil kontrolliert und gemessen werden können.
+      <strong>Mathematiker:innen</strong> liefern die theoretischen Werkzeuge, etwa in Form von linearen
+      Algebra-Strukturen wie Matrizen und Vektoren, um das Verhalten von Quantenobjekten mathematisch zu
+      beschreiben.
+      Auf dieser Basis entwerfen <strong>Informatiker:innen</strong> konkrete Quantenalgorithmen und
+      implementieren Anwendungen.
+    </p>
+      <div class="npc-container">
+          <img src="../images/NPC.png" alt="Prof. Qubitnik">
+          <div class="speech-bubble">
+              <p>In welchem Bereich könnten Quantencomputer in Zukunft besonders nützlich sein?</p>
+              <label>
+                  <select id="quiz-quantum-usecase">
+                      <option disabled selected>-- Wähle eine Antwort --</option>
+                      <option>Beim Entdecken neuer Medikamente durch Simulation von Molekülen</option>
+                      <option>Beim schnellen Öffnen von Computerprogrammen</option>
+                      <option>Beim Speichern von mehr Fotos auf dem Smartphone</option>
+                      <option>Beim Rendern von 3D-Grafiken in Videospielen</option>
+                  </select>
+              </label>
+          </div>
+      </div>
+  </section>
+</main>
+
+
+<footer>
+  &copy; 2025 Quantenreise · Erstellt für Bildungszwecke
+</footer>
+
+<script type="module">
+    import { setupBurgerMenu } from "../js/burgerMenu.js";
+    setupBurgerMenu();
+</script>
+
+<script type="module" src="../js/quizQuestions.js"></script>
+<script type="module" src="../js/progressStorage.js"></script>
+<script type="module">
+    import { guardAccess } from "../js/levelLock.js";
+
+    guardAccess("", "chapter0", 0);
+</script>
+<script type="module" src="../js/stickyHeaderProgressBar.js"></script>
+
+</body>
+</html>

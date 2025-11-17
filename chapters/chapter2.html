@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Quantengatter</title>
+    <link rel="stylesheet" href="../styles.css"/>
+</head>
+<body data-key="chapter2"
+      data-questionsnumber="5">
+
+<div class="side-menu" id="sideMenu">
+    <button class="burger">☰</button>
+    <a href="../index.html">🏠 Landing Page</a>
+    <a id="level0" class="unlocked" href="../chapters/chapter0.html">Relevanz</a>
+    <a id="level1" class="unlocked" href="../chapters/chapter1.html">Was ist ein Qubit?</a>
+    <a id="level2" class="unlocked" href="#">Quantenschaltkreise</a>
+    <a id="level3" class="locked" href="#">Anwendungsbeispiel Quantenschaltkreise</a>
+    <a id="level4" class="locked" href="#">Level 4</a>
+    <a id="level5" class="locked" href="#">Level 5</a>
+</div>
+
+<header>
+    <button class="burger">☰</button>
+    <h1>Quantenschaltkreise</h1>
+    <div class="progress-header" id="progressHeader">
+        <progress id="xp-bar" value="0" max="100"></progress>
+        <span id="xp-text">0 / 100 XP</span>
+    </div>
+</header>
+
+<main>
+    <!-- STORY INTRO -->
+    <section class="story-section">
+        <h2>Mission: Erste Schaltkreise</h2>
+        <div class="npc-container">
+            <img src="../images/NPC.png" alt="Prof. Qubitnik im Kontrollraum">
+            <div class="speech-bubble">
+                <p>
+                    Großartig! Du bist mit dem Missionshandbuch vertraut. Jetzt können wir den Start vorbereiten.
+                    <br><br>
+                    Wir müssen das <strong>Steuerdeck</strong> von unserem Raumschiff hochfahren und den <strong>Quantenantrieb</strong> initialisieren.
+                    Alle Systeme reagieren empfindlich – ein einziger falscher Schaltvorgang kann zum Desaster führen.
+                    <br><br>
+                    Mithilfe von <em>Quantenschaltkreisen</em> können wir unsere Systeme im Raumschiff kalibrieren, damit die Startprozedur präzise abläuft.
+                    Bereit? Dann leiten wir die Sequenz ein!
+                </p>
+            </div>
+        </div>
+
+        <p>
+            Die Anzeigen beginnen zu flackern, während du die ersten Schaltkreise analysierst.
+            Überall leuchten Symbole, die du aus dem Handbuch wiedererkennst – es ist Zeit, sie anzuwenden.
+        </p>
+    </section>
+
+    <!-- LEARNING CONTENT BEGINS -->
+    <section class="learning-section">
+        <h2>Quanten-Gatter</h2>
+        <p>
+            Wozu werden Superposition und Verschränkung überhaupt gebraucht?
+            Sie ermöglichen völlig neue Arten von Algorithmen – sogenannte Quantenalgorithmen –
+            die in bestimmten Fällen viel schneller sind als klassische Verfahren.
+        </p>
+
+        <p>
+            In klassischen Computern werden Gatter wie beispielsweise <strong>AND</strong>, <strong>OR</strong> oder <strong>NAND</strong>
+            verwendet,
+            um logische Operationen auf der Hardwareebene auszuführen.
+            </p>
+        <div style="border-left: 4px solid #2196F3; background-color: #f1f8ff; padding: 12px; margin: 20px 0;">
+            <ul>
+                <li><strong>AND-Gatter</strong>: Gibt 1 nur wenn beide Eingänge 1 sind</li>
+                <li><strong>OR-Gatter</strong>: Gibt 1 wenn mindestens ein Eingang 1 ist</li>
+                <li><strong>NAND-Gatter</strong>: Gibt das Gegenteil vom AND-Gatter aus</li>
+            </ul>
+            <p>
+                Diese Gatter arbeiten <strong>deterministisch</strong> – bei gleichem Input entsteht immer derselbe Output.
+            </p>
+        </div>
+        <p>
+            Quantencomputer verwenden auch Gatter, um Berechnungen durchzuführen – allerdings mit grundlegenden Unterschieden.
+        </p>
+        <p>
+            In Quantencomputern dienen <strong>Quantengatter</strong> dazu, den Zustand von <strong>Qubits</strong> gezielt zu verändern.
+            Diese Gatter haben nicht nur andere Namen als ihre klassischen Gegenstücke, sie funktionieren auch nach anderen physikalischen Prinzipien.
+            Wie bereits gelernt sind <strong>Qubits</strong> nichts anderes als Vektoren in einem Raum.
+            <strong>Quantengatter</strong> wirken auf diese Vektoren, indem sie sie drehen, spiegeln oder verschränken – ähnlich wie Transformationen
+            im dreidimensionalen Raum. Auf dieser Grundlage führen Quantencomputer ihre Berechnungen durch.
+            <strong>Durch gezielte Messungen</strong> der manipulierten Qubits werden schließlich die <strong>Ergebnisse</strong> sichtbar gemacht.
+        </p>
+        <div style="border-left: 4px solid #2196F3; background-color: #f1f8ff; padding: 12px; margin: 20px 0;">
+            <p>Gatter in Quantencomputern haben folgende Eigenschaften:</p>
+            <ul>
+                <li>
+                    Sie sind <strong>reversibel</strong>: Aus jedem Output lässt sich der eindeutige Input rekonstruieren.
+                    Fachlich heißt das: Quantengatter sind <em>unitär</em>, es existiert immer eine Umkehroperation.
+                    Dadurch bleibt die Gesamtwahrscheinlichkeit erhalten.
+                    <br>
+                    <small>
+                        Beispiele: <strong>Pauli X</strong> ist seine eigene Umkehrung (X·X = I),
+                        <strong>Hadamard</strong> ebenso (H·H = I),
+                        beim <strong>T</strong>-Gatter ist die Umkehrung \(T^\dagger\).
+                        (Nur Messungen sind <em>nicht</em> reversibel – sie gehören nicht zu den unitären Gattern.)
+                    </small>
+                </li>
+                <li>Sie verändern <strong>den Zustand des Qubits</strong> durch mathematische Operationen (z. B. Matrizen).</li>
+                <li>Sie können <strong>Superpositionen</strong> erzeugen oder verändern.</li>
+            </ul>
+        </div>
+
+        <h3>Wichtige Quanten-Gatter</h3>
+        <p>
+            Einige der folgenden Gatter verwenden sogenannte <strong>Steuer-Qubits</strong> („Control“) und das <strong>Ziel-Qubits</strong> („Target“).
+            Das verständnis dieser beiden Rollen ist wichtig, um die entsprechenden Gatter zu verstehen.
+            Das Steuer-Qubit entscheidet, ob das Gatter aktiv wird.
+            Wenn das Steuer-Qubit aktiv wird, dann wirkt das Gatter auf das Ziel-Qubit.
+            Beim CNOT-Gatter wird beispielsweise das Ziel-Qubit nur dann umgeschaltet (also von |0⟩ auf |1⟩ oder umgekehrt), wenn das Steuer-Qubit im Zustand |1⟩ ist.
+        </p>
+        <div class="quantum-gate-wrapper">
+            <table class="quantum-gate-table">
+                <thead>
+                <tr>
+                    <th>Gatter-Name</th>
+                    <th>Matrix</th>
+                    <th>Auswirkung auf Zustand</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- visible gates -->
+                <tr>
+                    <td>Hadamard</td>
+                    <td>\( \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \)</td>
+                    <td>Bringt Qubit in die Superposition</td>
+                </tr>
+                <tr>
+                    <td>Pauli-X</td>
+                    <td>\( \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \)</td>
+                    <td>180° Rotation um X-Achse</td>
+                </tr>
+                <tr>
+                    <td>Pauli-Y</td>
+                    <td>\( \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} \)</td>
+                    <td>180° Rotation um Y-Achse</td>
+                </tr>
+                <tr>
+                    <td>Pauli-Z</td>
+                    <td>\( \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \)</td>
+                    <td>180° Rotation um Z-Achse (verändert die Phase)</td>
+                </tr>
+
+                <!-- hidden gates -->
+                <tbody id="more-gates" style="display: none;">
+                <tr>
+                    <td>CNOT</td>
+                    <td>\( \begin{pmatrix}
+                        1 & 0 & 0 & 0 \\
+                        0 & 1 & 0 & 0 \\
+                        0 & 0 & 0 & 1 \\
+                        0 & 0 & 1 & 0
+                        \end{pmatrix} \)</td>
+                    <td>Negiert Zielqubit, wenn Steuer-Qubit \(|1⟩\)</td>
+                </tr>
+                <tr>
+                    <td>CNOT Reverse</td>
+                    <td>\( \begin{pmatrix}
+                        1 & 0 & 0 & 0 \\
+                        0 & 0 & 0 & 1 \\
+                        0 & 0 & 1 & 0 \\
+                        0 & 1 & 0 & 0
+                        \end{pmatrix} \)</td>
+                    <td>Negiert Steuer-Qubit, wenn Ziel-Qubit \(|1⟩\)</td>
+                </tr>
+                <tr>
+                    <td>Toffoli</td>
+                    <td>\( \begin{pmatrix}
+                        1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+                        0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+                        0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+                        0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+                        0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+                        0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+                        0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+                        0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
+                        \end{pmatrix} \)</td>
+                    <td>CCNOT – nur wenn beide Steuerqubits \(|1⟩\)</td>
+                </tr>
+                <tr>
+                    <td>Rotate-X</td>
+                    <td>\( e^{-i X \theta / 2} \)</td>
+                    <td>Drehung um X-Achse um Winkel \(\theta\)</td>
+                </tr>
+                <tr>
+                    <td>Rotate-Y</td>
+                    <td>\( e^{-i Y \theta / 2} \)</td>
+                    <td>Drehung um Y-Achse um Winkel \(\theta\)</td>
+                </tr>
+                <tr>
+                    <td>Rotate-Z</td>
+                    <td>\( e^{-i Z \theta / 2} \)</td>
+                    <td>Drehung um Z-Achse um Winkel \(\theta\) (Phasenverschiebung)</td>
+                </tr>
+                <tr>
+                    <td>Phase</td>
+                    <td>\( \begin{pmatrix} 1 & 0 \\ 0 & i \end{pmatrix} \)</td>
+                    <td>Fügt Phase von \(i\) hinzu</td>
+                </tr>
+                <tr>
+                    <td>\( \pi/8 \) Gatter (T)</td>
+                    <td>\( \begin{pmatrix} 1 & 0 \\ 0 & e^{i\pi/4} \end{pmatrix} \)</td>
+                    <td>Fügt Phase von \( \frac{\pi}{4} \) hinzu</td>
+                </tr>
+                <tr>
+                    <td>SWAP</td>
+                    <td>\( \begin{pmatrix}
+                        1 & 0 & 0 & 0 \\
+                        0 & 0 & 1 & 0 \\
+                        0 & 1 & 0 & 0 \\
+                        0 & 0 & 0 & 1
+                        \end{pmatrix} \)</td>
+                    <td>Tauscht die Zustände von zwei Qubits</td>
+                </tr>
+                <tr>
+                    <td>\(|0⟩\)-gesteuertes NOT</td>
+                    <td>\( \begin{pmatrix}
+                        0 & 1 & 0 & 0 \\
+                        1 & 0 & 0 & 0 \\
+                        0 & 0 & 1 & 0 \\
+                        0 & 0 & 0 & 1
+                        \end{pmatrix} \)</td>
+                    <td>NOT bei Steuer-Qubit \(|0⟩\)</td>
+                </tr>
+                <tr>
+                    <td>Gesteuerter Z Operator</td>
+                    <td>\( \begin{pmatrix}
+                        1 & 0 & 0 & 0 \\
+                        0 & 1 & 0 & 0 \\
+                        0 & 0 & 1 & 0 \\
+                        0 & 0 & 0 & -1
+                        \end{pmatrix} \)</td>
+                    <td>Fügt Phase hinzu, wenn beide Qubits \(|1⟩\)</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- toggle button -->
+            <button onclick="toggleGates()" id="toggle-btn">Tabelle ausklappen</button>
+        </div>
+        <script>
+            function toggleGates() {
+                const hiddenRows = document.getElementById("more-gates");
+                const button = document.getElementById("toggle-btn");
+
+                if (hiddenRows.style.display === "none") {
+                    hiddenRows.style.display = "table-row-group";
+                    button.textContent = "Tabelle einklappen";
+                } else {
+                    hiddenRows.style.display = "none";
+                    button.textContent = "Tabelle ausklappen";
+                }
+            }
+        </script>
+        <div class="npc-container">
+            <img src="../images/NPC.png" alt="Prof. Qubitnik">
+            <div class="speech-bubble">
+                <p>Ein Quantengatter wirkt auf ein Qubit. Was passiert dabei?</p>
+                <label>
+                    <select id="quiz-gate-action">
+                        <option disabled selected>-- Wähle eine Antwort --</option>
+                        <option>Das Qubit wird gemessen und kollabiert</option>
+                        <option>Das Qubit wird gelöscht</option>
+                        <option>Das Qubit wird durch eine Matrixoperation verändert</option>
+                        <option>Das Qubit wird dupliziert</option>
+                    </select>
+                </label>
+
+                <p>Was passiert beim CNOT-Gatter, wenn das Steuer-Qubit im Zustand |1⟩ ist?</p>
+                <label>
+                    <select id="quiz-cnot">
+                        <option disabled selected>-- Wähle eine Antwort --</option>
+                        <option>Das Ziel-Qubit wird invertiert (|0⟩ ↔ |1⟩)</option>
+                        <option>Das Ziel-Qubit bleibt unverändert</option>
+                        <option>Das Steuer-Qubit wird gelöscht</option>
+                        <option>Beide Qubits werden gemessen</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <h3>Wichtige Eigenschaften von Quantengatter</h3>
+        <p>
+            Quantengatter sind mathematisch betrachtet <strong>lineare Operatoren</strong>, die auf Qubit-Zustände wirken.
+            Zwei zentrale Eigenschaften, die sie erfüllen müssen, sind <strong>Unitarität</strong> und in manchen Fällen
+            <strong>Hermitizität</strong>.
+        </p>
+        <p>
+            Unitarität stellt sicher, dass die Norm (also die Gesamtwahrscheinlichkeit) eines Zustands erhalten bleibt. Ohne Unitarität wäre eine
+            verlustfreie, umkehrbare Zustandsmanipulation nicht möglich.
+        </p>
+        <div style="border-left: 4px solid #2196F3; background-color: #f1f8ff; padding: 12px; margin: 20px 0;">
+            Ein Operator ist <em>unitär</em>, wenn seine Inverse gleich seiner adjungierten Matrix ist – also der
+            konjugierten Transponierten: \( U^\dagger U = UU^\dagger = I \).
+        </div>
+        <p>
+            Hermitizität ist bei <strong>Observablen</strong> wichtig. Observablen sind physikalisch Werte die gemessen werden können.
+            Beispiele für Observablen sind Energie, Spin oder Polarisation von Qubits.
+            Observablen müssen reale Eigenwerte haben, sodass ihre Messwerte ausschließlich reelle Zahlen sind.
+        </p>
+        <div style="border-left: 4px solid #2196F3; background-color: #f1f8ff; padding: 12px; margin: 20px 0;">
+            <em>Hermitesche Operatoren</em> erfüllen die Bedingung \( H^\dagger = H \) und sind besonders bei der Messung
+            von Quantenzuständen wichtig.
+        </div>
+
+        <div class="npc-container">
+            <img src="../images/NPC.png" alt="Prof. Qubitnik">
+            <div class="speech-bubble">
+                <p>Warum müssen Quantengatter unitär sein?</p>
+                <label>
+                    <select id="quiz-unitarity">
+                        <option disabled selected>-- Wähle eine Antwort --</option>
+                        <option>Damit Wahrscheinlichkeiten beim Rechnen verloren gehen</option>
+                        <option>Damit die Gesamtwahrscheinlichkeit immer erhalten bleibt</option>
+                        <option>Damit sie zufällige Ergebnisse erzeugen</option>
+                        <option>Damit das Gatter die Qubits löscht</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+
+        <h3>Anwendung von Quantengattern</h3>
+        <p>
+            Im Kapitel 1 - Bit vs. Qubit - haben wir gelernt, dass Zustände durch Vektoren beschrieben werden.
+        </p>
+        <div style="border-left: 4px solid #2196F3; background-color: #f1f8ff; padding: 12px; margin: 20px 0;">
+
+            <strong>Wiederholung zu |0⟩ und |1⟩ in Vektordarstellung</strong>
+            <p>
+                Die Basiszustände \( |0\rangle \) und \( |1\rangle \) lassen sich als Spaltenvektoren darstellen:<br>
+                \( |0\rangle = \begin{pmatrix}1 \\ 0\end{pmatrix}, \quad |1\rangle = \begin{pmatrix}0 \\ 1\end{pmatrix} \)
+            </p>
+            </div>
+        <p>
+            Das Gatter (Matrix) kann auf den Zustand (Vektor) angewendet werden. Beim Anwenden wird eine einfache Multiplikation von Matrix und Vektor durchgeführt.
+            Damit kann ein Zustand durch das Anwenden eines Quanten Gatters in einen neuen Zustand überführt werden.
+
+            Nehmen wir als Beispiel den |0⟩ Zustand und wenden darauf Hadamard an.
+        </p>
+        <div style="border-left: 4px solid #2196F3; background-color: #f1f8ff; padding: 12px; margin: 20px 0;">
+            <p>
+                Im folgenden stellen wir Operationen auf Qubits wie folgt dar.
+            </p>
+            <ol>
+                <li>Initialisierung des Quantenregisters mit dem Zustand \( |0\rangle \)</li>
+                <li>Pfeil mit darauf folgender Beschreibung welche Operation ausgeführt wird und erneuter Pfeil</li>
+                <li>Quantenregister im neuen Zustand (Operation aus Schritt 2. wird hier angewendet)</li>
+            </ol>
+        </div>
+        <div style="border-left: 4px solid #2196F3; background-color: #f1f8ff; padding: 12px; margin: 20px 0;">
+            <strong>Hadamard auf \( |0\rangle \)</strong><br>
+            \( |0\rangle \rightarrow \text{anwenden von } H \)
+            <br>
+            \( \rightarrow H|0\rangle =
+            \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}
+            \cdot \begin{pmatrix} 1 \\ 0 \end{pmatrix} \)
+            <br>
+            \( =
+            \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} =
+            \frac{1}{\sqrt{2}} (|0\rangle + |1\rangle) \)
+
+            <br><br>
+            <p>
+                Für die Berechnung der Wahrscheinlichkeiten der Zustände \( |0⟩ \) und \( |1⟩ \)
+                muss die <strong>Amplitude</strong> des jeweiligen Zustands genommen und ihr <strong>Betrag quadriert</strong> werden.
+                In der Gleichung \( |ψ⟩ = a|0⟩ + b|1⟩ \) sind die <em>Amplituden</em> genau diese Vorfaktoren \( a \) und \( b \).
+                Sie beschreiben die Stärke, mit der die Zustände \( |0⟩ \) und \( |1⟩ \) im Gesamtzustand enthalten sind.
+            </p>
+            <p>
+            \( |0\rangle = \left|\frac{1}{\sqrt{2}} \right|^2 = \frac{1}{2} = 50 \%\)
+            </p>
+            <p>
+            \( |1\rangle = \left|\frac{1}{\sqrt{2}} \right|^2 = \frac{1}{2} = 50 \%\)
+            </p>
+            Das Ergebnis ist somit zu 50% \( |0\rangle \) und zu 50% \( |1\rangle \).
+        </div>
+        <p>
+            Quantenoperationen auf einem einzelnen Qubit lassen sich mithilfe der Bloch-Sphäre visuell darstellen.
+        </p>
+
+        <div class="npc-container">
+            <img src="../images/NPC.png" alt="Prof. Qubitnik">
+            <div class="speech-bubble">
+                <p>Was passiert, wenn wir das Hadamard-Gatter auf den Zustand |1⟩ anwenden?</p>
+                <label>
+                    <select id="quiz-hadamard-on-1">
+                        <option disabled selected>-- Wähle eine Antwort --</option>
+                        <option>Das Qubit bleibt im Zustand |1⟩</option>
+                        <option>Das Qubit kollabiert in |0⟩</option>
+                        <option>Es entsteht die Superposition mit gleichem Anteil von |0⟩ und |1⟩, aber mit negativem Vorzeichen vor |1⟩</option>
+                        <option>Es entsteht die Superposition mit gleichem Anteil von |0⟩ und |1⟩</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <h2>Quantenschaltkreise</h2>
+        <p>
+            Nachdem wir die Grundlagen der Quantengatter kennengelernt haben, können wir betrachten, wie sie in der Praxis
+            zusammengefügt werden. Dazu verwendet man sogenannte <strong>Quantenschaltkreise</strong>.
+        </p>
+        <p>
+            Ein Quantenschaltkreis ist das Äquivalent zu einem klassischen Schaltplan. Während klassische Schaltkreise logische
+            Operationen mit <em>Bits</em> ausführen, bestehen Quantenschaltkreise aus einer Abfolge von <em>Quantengattern</em>, die
+            auf <em>Qubits</em> wirken. Jeder Draht im Schaltplan stellt dabei ein Qubit dar, und die Symbole auf diesen Drähten
+            sind die angewendeten Gatter.
+        </p>
+        <div style="border-left: 4px solid #2196F3; background-color: #f1f8ff; padding: 12px; margin: 20px 0;">
+            <p><strong>Grundlegende Eigenschaften eines Quantenschaltkreises:</strong></p>
+            <ul>
+                <li>Er besteht aus <strong>Qubit-Leitungen</strong> – jede Leitung repräsentiert ein Qubit im Schaltplan.</li>
+                <li>Darauf werden <strong>Gatter</strong> platziert, die die Zustände der Qubits gezielt verändern.</li>
+                <li>Einige <strong>Gatter wirken auf mehrere Qubits gleichzeitig</strong> (z.&nbsp;B. das CNOT-Gatter) und erzeugen dadurch <strong>Abhängigkeiten</strong> zwischen ihnen.<br>
+                    → Das bedeutet, dass eine Operation auf ein Qubit auch den Zustand eines anderen beeinflussen kann – ihre Zustände sind miteinander verschränkt.</li>
+                <li>Am Ende steht meist eine <strong>Messung</strong>, die die Quanteninformation in klassische Bits umwandelt.</li>
+            </ul>
+        </div>
+        <figure>
+            <img src="../images/small_quantum_circuit.jpg"
+                 alt="Beispielhafter Quantenschaltkreis" class="qc-example-circuit" >
+            <figcaption>Exemplarische Abbildung von zwei Qubits mit anschließender Anwendung von Hadamard (auf Qubit 1) und CNOT (kontrolliert von Qubit 1 und
+                angewendet auf Qubit 2). </figcaption>
+        </figure>
+        <p>
+            Auf diese Weise lassen sich komplexe Algorithmen als eine <em>Abfolge einfacher Transformationen</em> darstellen.
+            Diese grafische Darstellung ist ein zentrales Hilfsmittel, um Quantenalgorithmen zu implementieren und zu verstehen.
+        </p>
+        <div class="npc-container">
+            <img src="../images/NPC.png" alt="Prof. Qubitnik">
+            <div class="speech-bubble">
+                <p>Wofür steht der Quantenschaltkreis im Kontext von Quantenalgorithmen?</p>
+                <label>
+                    <select id="quiz-circuit-purpose">
+                        <option disabled selected>-- Wähle eine Antwort --</option>
+                        <option>Für die grafische Darstellung von Verschränkungen</option>
+                        <option>Für die Abfolge klassischer Rechenoperationen</option>
+                        <option>Für eine visuelle Darstellung der Abfolge von Quantengattern</option>
+                        <option>Für die physikalische Hardware</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <section class="story-section" id="chapter2-end">
+            <div class="npc-container">
+                <img src="../images/NPC.png" alt="Prof. Qubitnik schaut auf die Anzeigen">
+                <div class="speech-bubble" id="chapter2-end-text">
+                    <p>Beantworte erst alle Fragen, um die Kalibrierung abzuschließen.</p>
+                </div>
+            </div>
+
+            <p id="launch-scene" style="display: none;">
+                Ein tiefes Grollen durchzieht das Schiff, als sich das Energiefeld auflädt.
+                Die Sterne verschwimmen zu Lichtspuren – <strong>das Raumschiff hebt ab</strong>.
+            </p>
+        </section>
+
+    </section>
+</main>
+<footer>
+    &copy; 2025 Quantenreise · Gemeinsam Quanten entdecken!
+</footer>
+
+<script type="module">
+    import { setupBurgerMenu } from "../js/burgerMenu.js";
+    setupBurgerMenu();
+</script>
+
+<script type="module" src="../js/quizQuestions.js"></script>
+<script type="module" src="../js/progressStorage.js"></script>
+<script type="module">
+    import { guardAccess } from "../js/levelLock.js";
+
+    guardAccess("chapter1", "chapter2", 100);
+</script>
+<script type="module" src="../js/stickyHeaderProgressBar.js"></script>
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<script type="module">
+    import { getXP } from "../js/progressStorage.js";
+
+    const chapterKey = "chapter2";
+    const textBox = document.getElementById("chapter2-end-text");
+    const launchScene = document.getElementById("launch-scene");
+
+    function updateEndScene() {
+        const currentXP = getXP(chapterKey);
+        if (currentXP >= 100) {
+            textBox.innerHTML = `
+        <p>
+          Hervorragend – die Kalibrierung war erfolgreich!
+          Alle Systeme melden grünes Licht.
+          <br><br>
+          Halte dich fest … der <strong>Quantenantrieb</strong> zündet in 3 … 2 … 1 …
+        </p>
+      `;
+            launchScene.style.display = "block";
+        } else {
+            textBox.innerHTML = `<p>Beantworte erst alle Fragen, um die Kalibrierung abzuschließen.</p>`;
+            launchScene.style.display = "none";
+        }
+    }
+
+    // check when loading
+    updateEndScene();
+
+    // live update when XP is changed
+    document.addEventListener("xpUpdated", (e) => {
+        if (e.detail.chapter === chapterKey) {
+            updateEndScene();
+        }
+    });
+</script>
+
+
+</body>
+</html>
