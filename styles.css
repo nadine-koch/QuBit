@@ -134,7 +134,44 @@ progress::-webkit-progress-value {
     pointer-events: none;
     box-shadow: none;
 }
+/* ====================================================
+   Navigation Button
+==================================================== */
+.chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 3rem 0 1rem;
+    flex-wrap: wrap;
+}
 
+.chapter-btn {
+    flex: 1 1 180px;
+    text-align: center;
+    padding: 0.8rem 1.4rem;
+    border-radius: 999px;
+    text-decoration: none;
+    border: 2px solid #007BFF;
+    color: #007BFF;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.chapter-btn:hover {
+    background-color: #007BFF;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.chapter-btn.disabled {
+    border-color: #cccccc;
+    color: #aaaaaa;
+    background-color: #f3f3f3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
 /* ====================================================
    Footer
 ==================================================== */

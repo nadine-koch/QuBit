@@ -327,8 +327,17 @@
                 </label>
             </div>
         </div>
-
     </section>
+    <div class="chapter-nav">
+        <a class="chapter-btn prev" href="../chapters/chapter0.html">
+            ← Vorheriges Kapitel
+        </a>
+
+        <a class="chapter-btn next disabled"
+           data-target="../chapters/chapter2.html">
+            Nächstes Kapitel →
+        </a>
+    </div>
 </main>
 
 
@@ -349,10 +358,9 @@
     guardAccess("chapter0", "chapter1", 100);
 </script>
 <script type="module" src="../js/stickyHeaderProgressBar.js"></script>
+<script type="module" src="../js/chapterNavigation.js"></script>
 <script id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
-
-
 </body>
 </html>

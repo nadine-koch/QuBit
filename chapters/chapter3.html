@@ -307,6 +307,11 @@
             if (e.detail?.key === document.body.dataset.key) maybeRevealEnding();
         });
     </script>
+    <div class="chapter-nav">
+        <a class="chapter-btn prev" href="../chapters/chapter2.html">
+            ← Vorheriges Kapitel
+        </a>
+    </div>
 
 </main>
 <footer>
@@ -326,6 +331,7 @@
     guardAccess("chapter2", "chapter3", 100);
 </script>
 <script type="module" src="../js/stickyHeaderProgressBar.js"></script>
+<script type="module" src="../js/chapterNavigation.js"></script>
 <script id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>

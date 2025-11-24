@@ -29,6 +29,7 @@ const FILES_TO_CACHE = [
     "./js/overallProgressBar.js",
     "./js/progressStorage.js",
     "./js/stickyHeaderProgressBar.js",
+    "./js/chapterNavigation.js",
 
     // CSS
     "./styles.css",
