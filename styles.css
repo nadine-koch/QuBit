@@ -134,6 +134,14 @@ progress::-webkit-progress-value {
     pointer-events: none;
     box-shadow: none;
 }
+
+/* Tablet-Layout: 2 columns instead of 3 */
+@media (min-width: 768px) and (max-width: 1200px) {
+    .level-buttons {
+        max-width: 600px;
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+}
 /* ====================================================
    Navigation Button
 ==================================================== */
@@ -192,10 +200,14 @@ footer {
     background: none;
     border: none;
     color: white;
+    z-index: 2000;
+}
+
+/* Keep burger in side menu at the top-left corner */
+.side-menu .burger {
     position: absolute;
     left: 1rem;
     top: 1.2rem;
-    z-index: 2000;
 }
 
 .side-menu {
