@@ -75,5 +75,4 @@ Das Projekt selbst ist für **nicht-kommerzielle Bildungszwecke** gedacht.
 
 ---
 
-## Kontakt
 Projekt im Rahmen eines universitären Forschungs- und Lehrkontexts entwickelt.
