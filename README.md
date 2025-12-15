@@ -75,24 +75,6 @@ Die Plattform folgt einem **progressiven Lernpfad**:
 
 ---
 
-### Scaffolding (Lernunterstützung)
-Scaffolding wird u. a. eingesetzt durch:
-- schrittweise Steigerung der Quiz-Komplexität
-- Wiederaufnahme bekannter Konzepte in neuen Kontexten
-- narrative Hinweise durch den NPC *Prof. Qubitnik*
-
----
-
-## Story-Konzept
-Die Lernenden begleiten **Prof. Qubitnik**, Leiter einer Forschungsstation auf dem Planeten *Tensora*.
-
-- Klassische Computersysteme stoßen an ihre Grenzen
-- Die Mission: Umstellung auf Quanteninformatik
-- Jedes Kapitel entspricht einem **logischen Missionsabschnitt**
-- Quizfragen sind **direkt in die Story eingebettet**
-
----
-
 ## Lizenz & Bildmaterial
 - Eigene Grafiken und KI-generierte Assets
 - Fremde Abbildungen werden gemäß ihrer Lizenz korrekt attribuiert  
