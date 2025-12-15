@@ -58,23 +58,6 @@ Nach Abschluss der verfügbaren Kapitel können Lernende:
 
 ---
 
-### Didaktischer Aufbau
-Die Plattform folgt einem **progressiven Lernpfad**:
-
-1. **Motivation & Kontextualisierung**  
-   Einstieg über eine narrative Problemstellung (kosmischer Notfall)
-
-2. **Konzeptuelles Fundament**  
-   Qubits, Superposition, Messung, Bloch-Sphäre
-
-3. **Anwendung & Transfer**  
-   Quantengatter, Schaltkreise, Orakel-Prinzip
-
-4. **Reflexion & Sicherung**  
-   Quizfragen mit steigender kognitiver Tiefe
-
----
-
 ## Lizenz & Bildmaterial
 - Eigene Grafiken und KI-generierte Assets
 - Fremde Abbildungen werden gemäß ihrer Lizenz korrekt attribuiert  
