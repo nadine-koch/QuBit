@@ -25,10 +25,10 @@
     </div>
 
     <div class="level-buttons">
-        <a href="./chapters/chapter0.html">Relevanz</a>
-        <a href="./chapters/chapter1.html">Was ist ein Qubit?</a>
-        <a href="./chapters/chapter2.html">Quantenschaltkreise</a>
-        <a href="./chapters/chapter3.html">Anwendungsbeispiel Quantenschaltkreise</a>
+        <a id="level0" class="unlocked" href="./chapters/chapter0.html">Relevanz</a>
+        <a id="level1" class="locked" href="#">Was ist ein Qubit?</a>
+        <a id="level2" class="locked" href="#">Quantenschaltkreise</a>
+        <a id="level3" class="locked" href="#">Anwendungsbeispiel Quantenschaltkreise</a>
     </div>
 </main>
 
@@ -44,6 +44,7 @@
 
 <script type= "module" src="js/progressStorage.js"></script>
 <script type="module" src="js/overallProgressBar.js"></script>
+<script type="module" src="js/levelLock.js"></script>
 
 <footer>
     &copy; 2025 Quantenreise · Erstellt für Bildungszwecke

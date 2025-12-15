@@ -1,8 +1,13 @@
 import { getXP } from "./progressStorage.js";
 
+function getChaptersPrefix() {
+    return window.location.pathname.includes("/chapters/") ? "../chapters" : "./chapters";
+}
+
 function unlockLevels() {
     const totalLevels = 4; // Number of chapters
     const xpThreshold = 100;
+    const prefix = getChaptersPrefix();
 
     for (let i = 0; i < totalLevels - 1; i++) {
         const xp = getXP("chapter" + i);
@@ -13,7 +18,7 @@ function unlockLevels() {
             if (next) {
                 next.classList.remove("locked");
                 next.classList.add("unlocked");
-                next.setAttribute("href", `../chapters/chapter${i + 1}.html`);
+                next.setAttribute("href", `${prefix}/chapter${i + 1}.html`);
             }
         }
     }
